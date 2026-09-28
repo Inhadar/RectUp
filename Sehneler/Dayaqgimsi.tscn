@@ -1,0 +1,255 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Sprites/Menu/Player.png" type="Texture" id=1]
+[ext_resource path="res://Dayaqgimsi.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/tikan (1).png" type="Texture" id=3]
+[ext_resource path="res://Sehneler/HGA.tscn" type="PackedScene" id=4]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 5.0
+rough = true
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 56.5578, 2.74922 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "New Anim"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 20 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -20, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -20 ), Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 20, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="OccluderPolygon2D" id=6]
+polygon = PoolVector2Array( -37.4537, -37.4384, 37.4291, -37.4463, 37.4318, 37.4291, -37.4303, 37.4287, -37.4416, 1.41421 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 73.1265, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 37.982, 38.4698 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 43.1091, 42.6975 )
+
+[node name="Dayagimsi" type="StaticBody2D" groups=[
+"Dayaqimsi",
+]]
+position = Vector2( 266.985, 334.79 )
+collision_layer = 2
+collision_mask = 388
+physics_material_override = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Tikanlar_meydani" type="Node2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="1" type="StaticBody2D" parent="Tikanlar_meydani" groups=[
+"Alt_Zererverici",
+]]
+position = Vector2( 0, 20 )
+
+[node name="Sprite" type="Sprite" parent="Tikanlar_meydani/1"]
+position = Vector2( -2.04018e-11, -47.9861 )
+rotation = -3.14159
+scale = Vector2( 0.0437517, 0.0437517 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tikanlar_meydani/1"]
+position = Vector2( 0, -39.5575 )
+shape = SubResource( 2 )
+disabled = true
+
+[node name="2" type="StaticBody2D" parent="Tikanlar_meydani" groups=[
+"Alt_Zererverici",
+]]
+position = Vector2( -20, 0 )
+rotation = 1.57079
+
+[node name="Sprite2" type="Sprite" parent="Tikanlar_meydani/2"]
+position = Vector2( -2.04018e-11, -47.9861 )
+rotation = -3.14159
+scale = Vector2( 0.0437517, 0.0437517 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tikanlar_meydani/2"]
+position = Vector2( 0, -39.5575 )
+shape = SubResource( 2 )
+disabled = true
+
+[node name="3" type="StaticBody2D" parent="Tikanlar_meydani" groups=[
+"Alt_Zererverici",
+]]
+position = Vector2( 0, -20 )
+rotation = 1.57079
+
+[node name="Sprite3" type="Sprite" parent="Tikanlar_meydani/3"]
+position = Vector2( 47.9861, -0.00010659 )
+rotation = -1.57079
+scale = Vector2( 0.0437517, 0.0437517 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tikanlar_meydani/3"]
+position = Vector2( 39.5575, -8.78677e-05 )
+rotation = 1.57079
+shape = SubResource( 2 )
+disabled = true
+
+[node name="4" type="StaticBody2D" parent="Tikanlar_meydani" groups=[
+"Alt_Zererverici",
+]]
+position = Vector2( 20, 0 )
+rotation = 1.57079
+
+[node name="Sprite4" type="Sprite" parent="Tikanlar_meydani/4"]
+position = Vector2( 0.00021318, 47.9861 )
+scale = Vector2( 0.0437517, 0.0437517 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tikanlar_meydani/4"]
+position = Vector2( 0.000175735, 39.5575 )
+rotation = 3.14159
+shape = SubResource( 2 )
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Tikanlar_meydani")
+"anims/New Anim" = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="Timer2" type="Timer" parent="."]
+
+[node name="HGA" parent="." instance=ExtResource( 4 )]
+position = Vector2( 50.0963, -0.396851 )
+scale = Vector2( 0.374383, 0.374383 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.0748766, 0.0748766 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+visible = false
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 23.7841, -1.78377 )
+scale = Vector2( 0.0273083, 0.0284975 )
+texture = ExtResource( 1 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 6 )
+
+[node name="5" type="StaticBody2D" parent="." groups=[
+"Alt_Zererverici",
+]]
+visible = false
+position = Vector2( 18.73, 13.5676 )
+rotation = 1.57079
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Sprite" type="Sprite" parent="5"]
+position = Vector2( -26.4029, -64.9323 )
+rotation = -3.14159
+scale = Vector2( 0.0896898, 0.111536 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="5"]
+modulate = Color( 0.0666667, 0.101961, 0.0470588, 1 )
+position = Vector2( -25.9451, -46.0046 )
+shape = SubResource( 7 )
+disabled = true
+
+[node name="6" type="StaticBody2D" parent="." groups=[
+"Alt_Zererverici",
+]]
+position = Vector2( -13.524, 18.4524 )
+rotation = 9.42476
+scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="6"]
+position = Vector2( -26.4003, -64.9323 )
+rotation = -3.14159
+scale = Vector2( 0.0896926, 0.111536 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="6"]
+modulate = Color( 0.0666667, 0.101961, 0.0470588, 1 )
+position = Vector2( -26.757, -46.2225 )
+rotation = -3.14159
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="."]
+priority = 1.0
+collision_layer = 2
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, -4.17233e-07 )
+shape = SubResource( 5 )
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

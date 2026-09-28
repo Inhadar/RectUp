@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/tikan (1).png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 299.83, 14.3537 )
+
+[node name="Agiz1" type="StaticBody2D" groups=[
+"AQIZ",
+]]
+position = Vector2( 0.147717, -1.49012e-05 )
+scale = Vector2( 1.2, 1.2 )
+collision_layer = 512
+collision_mask = 4
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 80.7486, 4.2615 )
+rotation = -3.14159
+scale = Vector2( 0.365184, 0.3 )
+texture = ExtResource( 1 )
+offset = Vector2( 743.325, 137.265 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -193.086, 24.999 )
+rotation = 8.88506e-06
+shape = SubResource( 1 )
+one_way_collision_margin = 128.0

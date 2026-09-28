@@ -1,0 +1,110 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Sehneler/Agiz1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/Menu/Player.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/AQ.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Qapi_qapi"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 89.9999 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Qapi_qapi"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -89.9999 ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 324.441, 219.255 )
+
+[node name="AQ" type="Area2D" groups=[
+"AQ",
+]]
+position = Vector2( 564, 487.765 )
+scale = Vector2( 0.25, 0.25 )
+priority = 1.0
+collision_layer = 16384
+collision_mask = 5
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 0, 3.77551 )
+scale = Vector2( 0.0402238, 0.0326728 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 0, -40.0886 )
+scale = Vector2( 0.624564, 0.159463 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 84.1048, 5.79859 )
+rotation = 1.0472
+scale = Vector2( 0.0284042, 0.0243547 )
+texture = ExtResource( 2 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( -84.7315, 6.12086 )
+rotation = 2.09439
+scale = Vector2( 0.02766, 0.0243547 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Agiz1")
+anims/Qapi_qapi = SubResource( 1 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Agiz2")
+anims/Qapi_qapi = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="Sprite5" type="Sprite" parent="."]
+position = Vector2( -0.271484, 24.8887 )
+rotation = 3.14159
+scale = Vector2( 0.203843, 0.0260359 )
+texture = ExtResource( 2 )
+
+[node name="Agiz1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 0 )
+
+[node name="Agiz2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 0 )
+scale = Vector2( -1.2, 1.2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 2.38419e-07, -198.67 )
+shape = SubResource( 3 )
+
+[node name="disable_timer" type="Timer" parent="."]
+[connection signal="body_entered" from="." to="." method="_on_AQ_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_AQ_body_exited"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer2" to="." method="_on_AnimationPlayer2_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="disable_timer" to="." method="_on_disable_timer_timeout"]

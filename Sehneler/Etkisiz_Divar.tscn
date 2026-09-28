@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/Menu/Player.png" type="Texture" id=1]
+[ext_resource path="res://Etkisiz_Divar.gd" type="Script" id=2]
+
+[node name="Sprite" type="Sprite"]
+position = Vector2( -304, 286.149 )
+scale = Vector2( 0.682877, 3.7158 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )

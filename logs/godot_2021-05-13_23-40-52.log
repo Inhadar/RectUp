@@ -1,0 +1,15 @@
+Godot Engine v3.2.3.stable.official - https://godotengine.org
+OpenGL ES 3.0 Renderer: GeForce GT 430/PCIe/SSE2
+ 
+**WARNING**: Font oversampling does not work in 'Viewport' stretch mode, only '2D'.
+   At: scene/main/scene_tree.cpp:1236:_update_root_rect() - Font oversampling does not work in 'Viewport' stretch mode, only '2D'.
+True
+**WARNING**: Font oversampling does not work in 'Viewport' stretch mode, only '2D'.
+   At: scene/main/scene_tree.cpp:1236:_update_root_rect() - Font oversampling does not work in 'Viewport' stretch mode, only '2D'.
+True
+True
+True
+True
+True
+True
+False
